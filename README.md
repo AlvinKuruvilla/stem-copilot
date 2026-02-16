@@ -25,10 +25,10 @@ Both modes produce structured markdown output with explicit confidence levels, g
 
 ### Setup
 
-1. **Clone or download** this repository:
+1. **Clone** this repository:
 
    ```bash
-   git clone <repo-url> /path/to/stem-copilot
+   git clone https://github.com/AlvinKuruvilla/stem-copilot.git /path/to/stem-copilot
    ```
 
 2. **Create the marketplace directory** for the plugin:
@@ -116,7 +116,6 @@ See [`templates/review-report.md`](templates/review-report.md) for the full repo
 ## Project Structure
 
 ```
-stem-copilot/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin metadata
 │   └── marketplace.json     # Marketplace registration
@@ -128,6 +127,7 @@ stem-copilot/
 │   └── solve.md             # /stem-copilot:solve — neuro-symbolic solver
 ├── templates/
 │   └── review-report.md     # Structured output template
+├── LICENSE
 └── README.md
 ```
 
