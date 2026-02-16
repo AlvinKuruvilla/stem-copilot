@@ -44,7 +44,23 @@ Both modes produce structured markdown output with explicit confidence levels, g
    ln -s /path/to/stem-copilot/skills ~/.claude/plugins/marketplaces/stem-copilot/skills
    ```
 
-4. **Enable the plugin** in your Claude Code settings (`~/.claude/settings.json`):
+4. **Register the plugin** in `~/.claude/plugins/installed_plugins.json`. Add the following entry inside the `"plugins"` object:
+
+   ```json
+   "stem-copilot@stem-copilot": [
+     {
+       "scope": "user",
+       "installPath": "/path/to/your/marketplace/stem-copilot",
+       "version": "1.0.0",
+       "installedAt": "2026-02-16T00:00:00.000Z",
+       "lastUpdated": "2026-02-16T00:00:00.000Z"
+     }
+   ]
+   ```
+
+   Replace the `installPath` with the actual path to your marketplace directory (e.g., `~/.claude/plugins/marketplaces/stem-copilot`).
+
+5. **Enable the plugin** in your Claude Code settings (`~/.claude/settings.json`):
 
    ```json
    {
@@ -56,7 +72,7 @@ Both modes produce structured markdown output with explicit confidence levels, g
 
    If you already have other plugins enabled, add the `"stem-copilot@stem-copilot": true` line to the existing `enabledPlugins` object.
 
-5. **Restart Claude Code** to pick up the new plugin.
+6. **Restart Claude Code** to pick up the new plugin.
 
 ### Verify installation
 
