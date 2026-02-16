@@ -23,7 +23,19 @@ Both modes produce structured markdown output with explicit confidence levels, g
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed and configured
 
-### Setup
+### Quick Start (Development)
+
+Load the plugin directly when launching Claude Code:
+
+```bash
+claude --plugin-dir /path/to/stem-copilot
+```
+
+This is the simplest way to use the plugin during development. Changes to skill files require restarting Claude Code.
+
+### Persistent Installation
+
+To install the plugin permanently so it's available in every session:
 
 1. **Clone** this repository:
 
@@ -31,48 +43,17 @@ Both modes produce structured markdown output with explicit confidence levels, g
    git clone https://github.com/AlvinKuruvilla/stem-copilot.git /path/to/stem-copilot
    ```
 
-2. **Create the marketplace directory** for the plugin:
+2. **Add it as a local marketplace** from within Claude Code:
 
-   ```bash
-   mkdir -p ~/.claude/plugins/marketplaces/stem-copilot
+   ```
+   /plugin marketplace add /path/to/stem-copilot
    ```
 
-3. **Symlink the plugin directories** into the marketplace:
+3. **Install the plugin**:
 
-   ```bash
-   ln -s /path/to/stem-copilot/.claude-plugin ~/.claude/plugins/marketplaces/stem-copilot/.claude-plugin
-   ln -s /path/to/stem-copilot/skills ~/.claude/plugins/marketplaces/stem-copilot/skills
    ```
-
-4. **Register the plugin** in `~/.claude/plugins/installed_plugins.json`. Add the following entry inside the `"plugins"` object:
-
-   ```json
-   "stem-copilot@stem-copilot": [
-     {
-       "scope": "user",
-       "installPath": "/path/to/your/marketplace/stem-copilot",
-       "version": "1.0.0",
-       "installedAt": "2026-02-16T00:00:00.000Z",
-       "lastUpdated": "2026-02-16T00:00:00.000Z"
-     }
-   ]
+   /plugin install stem-copilot@stem-copilot
    ```
-
-   Replace the `installPath` with the actual path to your marketplace directory (e.g., `~/.claude/plugins/marketplaces/stem-copilot`).
-
-5. **Enable the plugin** in your Claude Code settings (`~/.claude/settings.json`):
-
-   ```json
-   {
-     "enabledPlugins": {
-       "stem-copilot@stem-copilot": true
-     }
-   }
-   ```
-
-   If you already have other plugins enabled, add the `"stem-copilot@stem-copilot": true` line to the existing `enabledPlugins` object.
-
-6. **Restart Claude Code** to pick up the new plugin.
 
 ### Verify installation
 
