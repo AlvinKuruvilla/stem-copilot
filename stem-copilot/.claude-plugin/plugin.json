@@ -1,0 +1,16 @@
+{
+  "name": "stem-copilot",
+  "version": "1.0.0",
+  "description": "STEM research copilot — adversarial proof review and neuro-symbolic problem solving for math, CS, physics, and economics.",
+  "keywords": [
+    "research",
+    "review",
+    "verification",
+    "STEM",
+    "proof",
+    "neuro-symbolic",
+    "math",
+    "science",
+    "adversarial"
+  ]
+}

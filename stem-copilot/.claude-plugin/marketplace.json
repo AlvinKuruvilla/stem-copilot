@@ -1,0 +1,15 @@
+{
+  "name": "stem-copilot",
+  "owner": {
+    "name": "Alvin Kuruvilla",
+    "url": "https://github.com/alvinkuruvilla"
+  },
+  "plugins": [
+    {
+      "name": "stem-copilot",
+      "source": "./",
+      "description": "STEM research copilot — adversarial proof review and neuro-symbolic problem solving for math, CS, physics, and economics.",
+      "version": "1.0.0"
+    }
+  ]
+}
