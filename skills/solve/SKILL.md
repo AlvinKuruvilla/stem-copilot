@@ -1,5 +1,7 @@
 ---
+name: solve
 description: "Neuro-symbolic problem solving — an iterative hypothesis-verify loop for tackling new STEM problems and conjectures."
+user-invocable: true
 allowed-tools:
   - Read
   - Write

@@ -1,6 +1,6 @@
 ---
 description: "When the user is working on STEM research — reviewing proofs, verifying derivations, solving open problems, checking mathematical claims, or generating counterexamples."
-user-invocable: true
+user-invocable: false
 allowed-tools:
   - Read
   - Write

@@ -42,8 +42,6 @@ Both modes produce structured markdown output with explicit confidence levels, g
    ```bash
    ln -s /path/to/stem-copilot/.claude-plugin ~/.claude/plugins/marketplaces/stem-copilot/.claude-plugin
    ln -s /path/to/stem-copilot/skills ~/.claude/plugins/marketplaces/stem-copilot/skills
-   ln -s /path/to/stem-copilot/commands ~/.claude/plugins/marketplaces/stem-copilot/commands
-   ln -s /path/to/stem-copilot/templates ~/.claude/plugins/marketplaces/stem-copilot/templates
    ```
 
 4. **Enable the plugin** in your Claude Code settings (`~/.claude/settings.json`):
@@ -111,8 +109,6 @@ Both modes produce structured markdown with:
 - **Gap tags**: `[GAP: description]` marking every unverified assumption
 - **Self-correction log**: A transparency record showing what was added and retracted across passes
 
-See [`templates/review-report.md`](templates/review-report.md) for the full report template.
-
 ## Project Structure
 
 ```
@@ -120,13 +116,12 @@ See [`templates/review-report.md`](templates/review-report.md) for the full repo
 │   ├── plugin.json          # Plugin metadata
 │   └── marketplace.json     # Marketplace registration
 ├── skills/
-│   └── stem-copilot/
-│       └── SKILL.md         # Auto-engaging skill definition
-├── commands/
-│   ├── review.md            # /stem-copilot:review — 5-pass adversarial review
-│   └── solve.md             # /stem-copilot:solve — neuro-symbolic solver
-├── templates/
-│   └── review-report.md     # Structured output template
+│   ├── stem-copilot/
+│   │   └── SKILL.md         # Auto-engaging skill (shared principles)
+│   ├── review/
+│   │   └── SKILL.md         # /stem-copilot:review — 5-pass adversarial review
+│   └── solve/
+│       └── SKILL.md         # /stem-copilot:solve — neuro-symbolic solver
 ├── LICENSE
 └── README.md
 ```

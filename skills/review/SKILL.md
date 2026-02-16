@@ -1,5 +1,7 @@
 ---
+name: review
 description: "Adversarial review mode — a 5-pass self-correction protocol for rigorously reviewing proofs, papers, and derivations."
+user-invocable: true
 allowed-tools:
   - Read
   - Write
@@ -20,8 +22,6 @@ Before beginning, identify the input:
 - If the user pasted content, work with that directly.
 - If the user referenced a URL, fetch it.
 - Ask the user to confirm what they want reviewed if the scope is unclear.
-
-Read the template at `templates/review-report.md` (relative to the plugin root) to understand the expected output format.
 
 ---
 
@@ -95,7 +95,7 @@ This pass ensures nothing was missed and catches the most subtle errors:
 
 ## Pass 5 — Final Verified Review
 
-Produce the **final structured review report**. Use this exact format:
+Produce the **final structured review report** using this exact format:
 
 ```markdown
 # Adversarial Review Report
